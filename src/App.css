@@ -10,6 +10,10 @@ p{
   margin: 0;
   
 }
+h1{
+  font-style: normal;
+  color: black;
+}
 button{
   margin: 15px;
   
@@ -34,4 +38,6 @@ button{
 .App-link {
   color: #61dafb;
 }
-
+.form{
+  background-color:lightskyblue;
+}

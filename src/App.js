@@ -1,26 +1,30 @@
-import React,{useState} from 'react';
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
-import userComponent from "./components/userComponent"
+import React from 'react';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
+import FrontpageComponent from './components/frontpageComponent';
+import LogInComponent from './components/loginComponent';
+import SignUpComponent from './components/signUpComponent';
+
+
+
 
 function App() {
   return (
-    //const [active,setActive]=useState("SignInButtonClick");
+    <Router>
     <div className="App">
       <header className="App-header">
-       
-       <img src="health.png" alt="healthy heart" width="150" height="150"></img>
-       <p>Take the first step to live with a sound and peaceful mind</p>
-       <p>Sign up today to detect signs of depression and get the help you deserve</p>
-       <div class="row">
-    <div class="col-sm-12 text-center">
-        <button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px;"  >Sign In</button>
-         <button id="btnClear" class="btn btn-danger btn-md center-block" Style="width: 100px;"  >Log In</button>
-     </div>
-</div>
-       </header>
-      
-    </div>
+      <Switch>
+        <Route path="/" exact component={FrontpageComponent}></Route>
+        <Route path="/signup" exact component={SignUpComponent}></Route>
+        <Route path="/login" exact component={LogInComponent}></Route>
+        <FrontpageComponent/>
+      </Switch>
+        
+        
+      </header>
+     
+      </div>
+     </Router>
   );
 }
 
